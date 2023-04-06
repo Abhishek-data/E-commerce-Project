@@ -18,7 +18,7 @@ const CartItem=(props)=>{
         <td>
           <div className="quan-rem">
             <span className="quantity">
-              <input type="number" value={props.quantity} />
+              {props.quantity}
             </span>
             <span className="rem">
               <button onClick={() => cartCtx.quantityplus(props.item)}style = {{backgroundColor:'green'}}>+</button>

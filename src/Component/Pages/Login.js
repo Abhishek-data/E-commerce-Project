@@ -1,4 +1,4 @@
-import { useState,useRef, useContext } from 'react';
+import { useState,useRef, useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
 import classes from './Login.module.css';
 import AuthContext from '../Store/AuthContext';
@@ -14,6 +14,13 @@ const cartCtx=useContext(CartContext);
 
 const[isLogin,setIsLogin]=useState(true);
 const[isLoading,setIsLoading] =useState(false);
+
+useEffect(()=>{
+  if(localStorage.getItem('userEmail')){
+    setIsLogin(true)
+    history.replace('/store')
+  }
+},[history])
   
 const switchAuthModeHandler=()=>{
   setIsLogin((prevState)=>!prevState);

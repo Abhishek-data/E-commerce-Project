@@ -8,7 +8,7 @@ import ProductContext from '../Store/ProductContext';
 const ProductItem=(props)=>{
   const cartCtx=useContext(CartContext)
   const productCtx = useContext(ProductContext);
-  console.log(productCtx)
+  
 
   const addItemToCartHandler=(event)=>{
     event.preventDefault();
